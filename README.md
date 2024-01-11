@@ -1,5 +1,5 @@
 Add Material UI graphics library
-### yarn add @mui/material @emotion/react @emotion/styled
+### `yarn add @mui/material @emotion/react @emotion/styled`
 
 In the project directory, you can run:
 
