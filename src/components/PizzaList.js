@@ -1,22 +1,21 @@
+// PizzaList.js
 import React from 'react';
+import { Grid, Container } from '@mui/material';
+import PizzaCard from './PizzaCard';
 
 const PizzaList = ({ pizzas, onPizzaSelect }) => {
-    return (
-      <div>
-        <h2>Escolha Sua Pizza:</h2>
-        <ul>
-          {pizzas.map(pizza => (
-            <li key={pizza.name} onClick={() => onPizzaSelect(pizza)}>
-              <strong>{pizza.name}</strong> - R${pizza.price}
-              <ul>
-                {pizza.ingredients.map(ingredient => (
-                  <li key={ingredient}>{ingredient}</li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
+  return (
+    <Container maxWidth="md" style={{ marginTop: '20px' }}>
+      <h2>Escolha sua Pizza:</h2>
+      <Grid container spacing={4}>
+        {pizzas.map(pizza => (
+          <Grid key={pizza.name} item xs={12} sm={6}>
+            <PizzaCard pizza={pizza} onPizzaSelect={onPizzaSelect} />
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+  );
+};
+
 export default PizzaList;
