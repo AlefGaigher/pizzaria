@@ -7,7 +7,7 @@ const App = () => {
   const [selectedPizzas, setSelectedPizzas] = useState([]);
 
   useEffect(() => {
-    fetch('server/pizzas.json')
+    fetch('./server/pizzas.json')
       .then(response => response.json())
       .then(data => setPizzas(data));
   }, []);

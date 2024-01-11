@@ -3,7 +3,7 @@ import React from 'react';
 const PizzaList = ({ pizzas, onPizzaSelect }) => {
     return (
       <div>
-        <h2>Escola Sua Pizza:</h2>
+        <h2>Escolha Sua Pizza:</h2>
         <ul>
           {pizzas.map(pizza => (
             <li key={pizza.name} onClick={() => onPizzaSelect(pizza)}>

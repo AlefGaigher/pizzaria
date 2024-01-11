@@ -5,14 +5,14 @@ const OrderSummary = ({ selectedPizzas }) => {
 
   const handleConfirmOrder = () => {
     // Make AJAX call to server/order.json
-    fetch('server/order.json')
+    fetch('./server/order.json')
       .then(response => response.json())
       .then(data => setDeliveryTime(data.deliveryTime));
   };
 
   return (
     <div>
-      <h2>Your Order Summary:</h2>
+      <h2>Seu Carrinho:</h2>
       <ul>
         {selectedPizzas.map(pizza => (
           <li key={pizza.id}>{pizza.name} - ${pizza.price}</li>
