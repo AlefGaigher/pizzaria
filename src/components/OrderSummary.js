@@ -20,13 +20,18 @@ const OrderSummary = ({ selectedPizzas, onPizzaDelete, totalPrice }) => {
   };
 
   const handleApplyCoupon = () => {
-    const couponDiscountPercentage = 0.1; 
+    const couponDiscountPercentage = 0.1; // 10%
     const discount = totalPrice * couponDiscountPercentage;
     setDiscountAmount(discount);
   };
 
   const handleCouponCodeChange = (e) => {
     setCouponCode(e.target.value);
+  };
+
+  const handlePizzaDelete = (pizza) => {
+    onPizzaDelete(pizza);
+    handleApplyCoupon();
   };
 
   const totalPriceWithDiscount = totalPrice - discountAmount;
@@ -44,7 +49,7 @@ const OrderSummary = ({ selectedPizzas, onPizzaDelete, totalPrice }) => {
                 primary={pizza.name}
                 secondary={`$${pizza.price.toFixed(2)}`}
               />
-              <Button onClick={() => onPizzaDelete(pizza)} color="error" variant="outlined">
+              <Button onClick={() =>  handlePizzaDelete(pizza)} color="error" variant="outlined">
                 Delete
               </Button>
             </ListItem>

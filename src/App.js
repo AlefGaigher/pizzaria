@@ -31,11 +31,12 @@ const App = () => {
   };
 
   return (
-    <React.Fragment>
+    <React.Fragment >
       <CssBaseline />
       <Container
         component="main"
         maxWidth="lg"
+        style={{padding: '40px'}}
       >
         <Paper elevation={3} style={{ padding: '20px', width: '100%' }}>
           <h1 style={{ color: 'orange', textAlign: 'center' }}>Cardápio</h1>
